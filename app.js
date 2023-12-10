@@ -410,7 +410,7 @@ $(document).ready(function () {
   let textTitle = "Gửi em! Hậu Đỗ :))";
   let charArrTitle = textTitle.split("");
   let text =
-    "Mùa giáng sinh này, anh chúc em được tràn ngập niềm vui và hạnh phúc. Mong rằng mọi điều tốt lành sẽ đến với em, mang đến một năm mới tràn đầy thành công và hạnh phúc.";
+    "Mùa giáng sinh này, anh chúc em được tràn ngập niềm vui và hạnh phúc. Mong rằng mọi điều tốt lành sẽ đến với em, mang đến một năm mới tràn đầy thành công và hạnh phúc.Love you!!!!!!";
   let charArrContent = text.split("");
   var currentIndexTitle = 0;
   var currentIndexContent = 0;
