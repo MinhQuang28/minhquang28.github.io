@@ -20,6 +20,12 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
   <script src="./2dplugin.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/EasePack3.min.js"></script>
+  <script>
+    $(".button").on("click", function () {
+      alert("Handler for `click` called.");
+    });
+  </script>
+
   <title>Christmas</title>
 </head>
 
@@ -944,7 +950,7 @@
       <div class="icon">
         <i class="fa-solid fa-xmark"></i>
       </div>
-      <div class="card">
+      <div id="fixheight" class="card">
         <div class="card-page cart-page-front">
           <div class="card-page cart-page-outside"></div>
           <div class="card-page cart-page-inside">

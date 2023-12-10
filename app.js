@@ -416,6 +416,8 @@ $(document).ready(function () {
   var currentIndexContent = 0;
   var textIntervalTitle;
   var textIntervalContent;
+  let width = window.innerWidth;
+
   function resetText() {
     clearInterval(textIntervalTitle);
     clearInterval(textIntervalContent);
@@ -424,7 +426,12 @@ $(document).ready(function () {
     currentIndexTitle = 0;
     currentIndexContent = 0;
   }
+
   $card.on("click", function () {
+    if (width < 540) {
+      console.log("🚀 ~ file: app.js:430 ~ width:", width);
+      $("#fixheight").addClass("fixheight");
+    }
     $(this).toggleClass("is-opened");
     if ($card.hasClass("is-opened")) {
       textIntervalTitle = setInterval(function () {
@@ -432,6 +439,7 @@ $(document).ready(function () {
           cartPageBottomH4.textContent += charArrTitle[currentIndexTitle];
           currentIndexTitle++;
           console.log(currentIndexTitle);
+          let width = window.innerWidth;
         } else {
           clearInterval(textIntervalTitle);
           textIntervalContent = setInterval(function () {
