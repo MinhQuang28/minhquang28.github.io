@@ -451,9 +451,9 @@ $(document).ready(function () {
             } else {
               clearInterval(textIntervalContent);
             }
-          }, 1);
+          }, 100);
         }
-      }, 1);
+      }, 100);
     } else {
       resetText();
     }
