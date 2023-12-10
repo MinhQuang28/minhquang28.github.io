@@ -407,48 +407,47 @@ $(document).ready(function () {
     $icon = $(".icon"),
     cartPageBottomP = document.querySelector(".cart-page-bottom p"),
     cartPageBottomH4 = document.querySelector(".cart-page-bottom h4");
-    let textTitle = "Gửi em!";
-    let charArrTitle = textTitle.split('');
-let text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus architecto beatae corporis veritatis dolorum tenetur pariatur illum excepturi quaerat. Voluptate harum suscipit, ea consequuntur voluptatem quam error eligendi beatae vero?"
-let charArrContent = text.split('');
-var currentIndexTitle = 0;
-var currentIndexContent = 0;
-var textIntervalTitle;
-var textIntervalContent;
-function resetText(){
-    clearInterval(textIntervalTitle)
-    clearInterval(textIntervalContent)
+  let textTitle = "Gửi em! Hậu Đỗ :))";
+  let charArrTitle = textTitle.split("");
+  let text =
+    "Mùa giáng sinh này, anh chúc em được tràn ngập niềm vui và hạnh phúc. Mong rằng mọi điều tốt lành sẽ đến với em, mang đến một năm mới tràn đầy thành công và hạnh phúc.";
+  let charArrContent = text.split("");
+  var currentIndexTitle = 0;
+  var currentIndexContent = 0;
+  var textIntervalTitle;
+  var textIntervalContent;
+  function resetText() {
+    clearInterval(textIntervalTitle);
+    clearInterval(textIntervalContent);
     cartPageBottomH4.textContent = "";
     cartPageBottomP.textContent = "";
     currentIndexTitle = 0;
     currentIndexContent = 0;
-}
+  }
   $card.on("click", function () {
     $(this).toggleClass("is-opened");
-    if($card.hasClass("is-opened")){
-        textIntervalTitle = setInterval(function(){
-            if(currentIndexTitle < charArrTitle.length){
-                cartPageBottomH4.textContent += charArrTitle[currentIndexTitle];
-                currentIndexTitle++;
-                console.log(currentIndexTitle)
+    if ($card.hasClass("is-opened")) {
+      textIntervalTitle = setInterval(function () {
+        if (currentIndexTitle < charArrTitle.length) {
+          cartPageBottomH4.textContent += charArrTitle[currentIndexTitle];
+          currentIndexTitle++;
+          console.log(currentIndexTitle);
+        } else {
+          clearInterval(textIntervalTitle);
+          textIntervalContent = setInterval(function () {
+            if (currentIndexContent < charArrContent.length) {
+              cartPageBottomP.textContent +=
+                charArrContent[currentIndexContent];
+              currentIndexContent++;
+              console.log(currentIndexContent);
+            } else {
+              clearInterval(textIntervalContent);
             }
-            else{
-                clearInterval(textIntervalTitle)
-                textIntervalContent = setInterval(function(){
-                    if(currentIndexContent < charArrContent.length){
-                        cartPageBottomP.textContent += charArrContent[currentIndexContent];
-                        currentIndexContent++;
-                console.log(currentIndexContent)
-                    }
-                    else{
-                        clearInterval(textIntervalContent)
-                    }
-                },100)
-            }
-        },100)
-    }
-    else{
-        resetText()
+          }, 100);
+        }
+      }, 100);
+    } else {
+      resetText();
     }
   });
 
@@ -462,7 +461,6 @@ function resetText(){
     $bgCard.fadeOut();
     $icon.fadeOut();
     $card.removeClass("is-opened");
-    resetText()
+    resetText();
   });
-
 });
