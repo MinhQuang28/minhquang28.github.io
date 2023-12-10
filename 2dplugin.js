@@ -31,12 +31,6 @@
     return Math.round(1e4 * n) / 1e4;
   }
   function n() {
-    console.log(
-      "🚀 ~ file: 2dplugin.js:35 ~ n ~ String.fromCharCode.apply(null, arguments):",
-      String.fromCharCode.apply(null, arguments),
-      arguments
-    );
-
     return String.fromCharCode.apply(null, arguments);
   }
   function s(n) {
